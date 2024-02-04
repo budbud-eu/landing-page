@@ -1,6 +1,6 @@
 /// <reference types="astro/client" />
 interface ImportMetaEnv {
-    readonly SOON_PAGE: boolean
+    readonly MAINTENANCE_PAGE: number
 }
 
 interface ImportMeta {
