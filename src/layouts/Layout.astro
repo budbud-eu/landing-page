@@ -2,13 +2,15 @@
 import Footer from "../components/elements/Footer.astro";
 import Navbar from "../components/elements/Navbar.astro";
 import Soon from "../components/sections/Soon.astro";
+import { maintenancePages } from "../utils/data";
 
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-const isSoonPage = import.meta.env.SOON_PAGE;
+
+const maintancePage = maintenancePages[import.meta.env.MAINTENANCE_PAGE];
 ---
 
 <!doctype html>
@@ -28,7 +30,7 @@ const isSoonPage = import.meta.env.SOON_PAGE;
   </head>
   <body class="overflow-hidden overflow-y-auto bg-body">
     {
-      isSoonPage ? (
+      maintancePage === "SOON" ? (
         <Soon />
       ) : (
         <>
