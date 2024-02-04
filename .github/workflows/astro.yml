@@ -35,10 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Create .env file
-        uses: SpicyPizza/create-envfile@v2.0
-        with:
-          envkey_DEBUG: false
-          envkey_MAINTENANCE_PAGE: ${{ vars.MAINTENANCE_PAGE }}
+        run: echo "MAINTENANCE_PAGE=${{ vars.MAINTENANCE_PAGE }}" > .env
       - name: Detect package manager
         id: detect-package-manager
         run: |
