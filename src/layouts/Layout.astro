@@ -31,7 +31,9 @@ if (import.meta.env.MAINTENANCE_PAGE) {
       rel="stylesheet"
     />
   </head>
-  <body class="overflow-hidden overflow-y-auto bg-body">
+  <body
+    class="min-h-screen flex flex-col overflow-hidden overflow-y-auto bg-body"
+  >
     {
       maintancePage === "SOON" ? (
         <Soon />
@@ -152,6 +154,14 @@ if (import.meta.env.MAINTENANCE_PAGE) {
   }
   body {
     font-family: "Raleway", sans-serif;
+  }
+
+  header {
+    margin-bottom: auto;
+  }
+
+  footer {
+    margin-top: auto;
   }
 
   [data-toggle-nav][data-open-nav="true"] #line1 {
