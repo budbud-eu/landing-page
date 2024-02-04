@@ -36,7 +36,7 @@ if (import.meta.env.MAINTENANCE_PAGE) {
       maintancePage === "SOON" ? (
         <Soon />
       ) : (
-        <div class="min-h-screen flex flex-col overflow-hidden overflow-y-auto">
+        <div class="min-h-screen flex flex-col overflow-y-auto">
           <Navbar />
           <slot />
           <Footer />
@@ -152,6 +152,7 @@ if (import.meta.env.MAINTENANCE_PAGE) {
   }
   body {
     font-family: "Raleway", sans-serif;
+    overflow: hidden;
   }
 
   footer {
