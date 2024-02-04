@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Create .env file
-        run: echo "MAINTENANCE_PAGE=0" > .env
+        run: echo "MAINTENANCE_PAGE=${{ secrets.MAINTENANCE_PAGE }}" > .env
       - name: Detect package manager
         id: detect-package-manager
         run: |

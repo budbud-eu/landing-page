@@ -10,7 +10,10 @@ export interface Props {
 
 const { title } = Astro.props;
 
-const maintancePage = maintenancePages[import.meta.env.MAINTENANCE_PAGE];
+let maintancePage = "";
+if (import.meta.env.MAINTENANCE_PAGE) {
+  maintancePage = maintenancePages[import.meta.env.MAINTENANCE_PAGE];
+}
 ---
 
 <!doctype html>
