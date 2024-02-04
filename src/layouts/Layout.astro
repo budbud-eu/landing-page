@@ -20,7 +20,10 @@ if (import.meta.env.MAINTENANCE_PAGE) {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
@@ -31,7 +34,7 @@ if (import.meta.env.MAINTENANCE_PAGE) {
       rel="stylesheet"
     />
   </head>
-  <body class="flex flex-col flex-wrap overflow-hidden overflow-y-auto bg-body">
+  <body class="bg-body">
     {
       maintancePage === "SOON" ? (
         <Soon />
@@ -152,6 +155,9 @@ if (import.meta.env.MAINTENANCE_PAGE) {
   }
   body {
     font-family: "Raleway", sans-serif;
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
   }
 
   header {
