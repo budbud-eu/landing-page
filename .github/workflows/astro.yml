@@ -26,7 +26,6 @@ concurrency:
 env:
   BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
-  SOON_PAGE: ${{ vars.SOON_PAGE }}
 
 jobs:
   build:
@@ -64,7 +63,7 @@ jobs:
         with:
           path: ${{ env.BUILD_PATH }}/dist
     env:
-      SOON_PAGE: ${{ env.SOON_PAGE }}
+      SOON_PAGE: ${{ vars.SOON_PAGE }}
 
   deploy:
     environment:
