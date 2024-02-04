@@ -57,14 +57,15 @@ jobs:
           node-version: "18"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+      - name: Create .env file
+        uses: ozaytsev86/create-env-file@v1
+        with:
+          MAINTENANCE_PAGE: ${{ vars.MAINTENANCE_PAGE }}
       - run: npm install && npm run build
         working-directory: ${{ env.BUILD_PATH }}
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ${{ env.BUILD_PATH }}/dist
-    env:
-      MAINTENANCE_PAGE: ${{ vars.MAINTENANCE_PAGE }}
-
   deploy:
     environment:
       name: github-pages
