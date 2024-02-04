@@ -62,6 +62,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ${{ env.BUILD_PATH }}/dist
+    env:
+      SOON_PAGE: ${{ env.SOON_PAGE }}
 
   deploy:
     environment:
