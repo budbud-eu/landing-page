@@ -215,8 +215,14 @@ if (import.meta.env.MAINTENANCE_PAGE) {
 
     if (window.scrollY > 10) {
       navbar?.classList.add("navbar-scrolled");
+      navbar?.classList.add("animate-in");
+      navbar?.classList.add("slide-in-from-top");
+      navbar?.classList.add("duration-500");
     } else {
       navbar?.classList.remove("navbar-scrolled");
+      navbar?.classList.remove("animate-in");
+      navbar?.classList.remove("slide-in-from-top");
+      navbar?.classList.remove("duration-500");
     }
   };
 </script>
