@@ -46,11 +46,21 @@
       isLoading = false;
     }
   }
+
+  let toBounce: boolean = true;
+
+  function toggleBounce(event: any) {
+    if (!toBounce && event.target.value !== "") return;
+
+    toBounce = !toBounce;
+  }
 </script>
 
 <form
-  class="py-1 pl-6 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
-border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary"
+  class={`py-1 pl-6 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary ${
+    toBounce ? "animate-bounce duration-800" : ""
+  }`}
   on:submit={submit}
 >
   <span class="min-w-max pr-2 border-r border-box-border">
@@ -75,6 +85,8 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
     name="email"
     placeholder="your@email.com"
     class="w-full py-3 outline-none bg-transparent"
+    on:focus={toggleBounce}
+    on:blur={toggleBounce}
   />
   <Button variant={"primary"} className={"min-w-max text-white"}>
     <span class="hidden sm:flex relative z-[5]"> Wow! Notify me!</span>
