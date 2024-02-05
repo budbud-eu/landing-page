@@ -1,5 +1,9 @@
 ---
 import Container from "../shared/Container.astro";
+import AddEmailForm from "../benchmark-email/AddEmailForm.svelte";
+
+const authToken = import.meta.env.BENCHMARKEMAIL_AUTH_TOKEN;
+const listId = import.meta.env.BENCHMARKEMAIL_CONTACT_LIST_ID;
 ---
 
 <div class="min-h-screen flex flex-col overflow-y-hidden">
@@ -11,14 +15,14 @@ import Container from "../shared/Container.astro";
             >
                 <div class="flex items-center gap-5">
                     <h1
-                        class="text-3xl/tight sm:text-4xl/tight md:text-5xl/tight xl:text-6xl/tight
+                        class="text-5xl/tight sm:text-6xl/tight md:text-7xl/tight xl:text-9xl/tight
                         font-bold text-heading-1"
                     >
                         BudBud
                     </h1>
                 </div>
                 <h1
-                    class="text-1xl/tight sm:text-3xl/tight md:text-4xl/tight xl:text-5xl/tight
+                    class="text-3xl/tight sm:text-4xl/tight md:text-6xl/tight xl:text-7xl/tight
                          font-bold text-heading-2"
                 >
                     Your new <span
@@ -27,12 +31,19 @@ import Container from "../shared/Container.astro";
                     > for personal finance
                 </h1>
                 <h1
-                    class="text-1xl/tight sm:text-2xl/tight md:text-3xl/tight xl:text-4xl/tight
+                    class="text-2xl/tight sm:text-3xl/tight md:text-4xl/tight xl:text-5xl/tight
                          font-bold text-heading-2 mt-3"
                 >
                     Soon<span class="dot1">.</span><span class="dot2">.</span
                     ><span class="dot3">.</span>
                 </h1>
+
+                <div class="mt-10"></div>
+                <AddEmailForm
+                    client:load
+                    authToken={authToken}
+                    listId={listId}
+                />
             </div>
         </Container>
     </section>
@@ -141,3 +152,4 @@ import Container from "../shared/Container.astro";
         }
     }
 </style>
+../benchmark-email/AddEmailForm.tsx../benchmark-email/AddEmailForm.tsx
