@@ -39,6 +39,8 @@ jobs:
         with:
           envkey_DEBUG: false
           envkey_MAINTENANCE_PAGE: ${{ vars.MAINTENANCE_PAGE }}
+          envkey_BENCHMARKEMAIL_AUTH_TOKEN: ${{ secrets.BENCHMARKEMAIL_AUTH_TOKEN }}
+          envkey_BENCHMARKEMAIL_CONTACT_LIST_ID: ${{ vars.BENCHMARKEMAIL_CONTACT_LIST_ID }}
       - name: Detect package manager
         id: detect-package-manager
         run: |
