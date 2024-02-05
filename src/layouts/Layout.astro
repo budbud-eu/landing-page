@@ -147,11 +147,45 @@ if (import.meta.env.MAINTENANCE_PAGE) {
     --heading-3: 209 213 219;
   }
 
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: inherit;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #203566;
+    border-radius: 5cm;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #122141;
+  }
+
   html {
     scroll-behavior: smooth;
   }
   body {
     font-family: "Raleway", sans-serif;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* Initial background color */
+    transition: background-color 0.3s ease-in-out;
+    padding: 15px;
+  }
+
+  .navbar-scrolled {
+    background-color: rgb(var(--color-bg));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   footer {
@@ -174,3 +208,15 @@ if (import.meta.env.MAINTENANCE_PAGE) {
     display: flex;
   }
 </style>
+
+<script>
+  window.onscroll = function () {
+    var navbar = document.getElementById("navbar");
+
+    if (window.scrollY > 10) {
+      navbar?.classList.add("navbar-scrolled");
+    } else {
+      navbar?.classList.remove("navbar-scrolled");
+    }
+  };
+</script>
