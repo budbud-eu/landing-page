@@ -2,7 +2,7 @@
 #
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
 #
-name: Deploy Astro site to Pages
+name: Deploy Astro site to Pages - integration
 
 on:
   # Runs on pushes targeting the default branch
@@ -71,12 +71,12 @@ jobs:
           path: ${{ env.BUILD_PATH }}/dist
   deploy:
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: integration
+      url: ${{ steps.deployment.outputs.page_url }}-int
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages - Integration
         id: deployment
         uses: actions/deploy-pages@v1
