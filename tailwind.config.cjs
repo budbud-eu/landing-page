@@ -9,7 +9,7 @@ module.exports = {
 				"box-bg": "rgb(var(--color-box))",
 				"box-shadow": "rgb(var(--box-sd))",
 				"box-border": "rgb(var(--box-border))",
-				primary: "#1d4ed8",
+				primary: "#5d93fd",
 				"heading-1": "rgb(var(--heading-1))",
 				"heading-2": "rgb(var(--heading-2))",
 				"heading-3": "rgb(var(--heading-3))",
@@ -21,5 +21,18 @@ module.exports = {
 	},
 	plugins: [
 		require("tailwindcss-animate"),
+		require('tailwind-typewriter')({
+            wordsets: {
+                welcome: {
+                    words: ['Your new budget buddy!', 'Soon...'],
+                    repeat: -1,
+					eraseSpeed: 0.1,
+					writeSpeed: 0.1,
+					caretWidth: '5px',
+					caretColor: '#5d93fd',
+					blinkSpeed: 1
+                }
+            }
+        })
 	],
 }
