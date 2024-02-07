@@ -87,6 +87,7 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
     class="w-full py-3 outline-none bg-transparent"
     on:focus={toggleBounce}
     on:blur={toggleBounce}
+    required
   />
   <Button variant={"primary"} className={"min-w-max text-white"}>
     <span class="hidden sm:flex relative z-[5]"> Wow! Notify me!</span>
@@ -136,7 +137,5 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
     <p class="text-red-500 font-bold">
       An error ocurred while saving your email...
     </p>
-  {:else if responseStatus == -2}
-    <p class="text-red-500 font-bold">Please insert an email...</p>
   {/if}
 </div>

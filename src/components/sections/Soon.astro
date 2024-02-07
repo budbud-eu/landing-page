@@ -8,38 +8,32 @@ const listId = import.meta.env.BENCHMARKEMAIL_CONTACT_LIST_ID;
 ---
 
 <div class="min-h-screen flex flex-col overflow-y-hidden">
-    <section class="flex-1 flex items-center justify-center">
-        <Container className={"flex flex-col lg:flex-row gap-10 lg:gap-12"}>
+    <section class="flex-1 flex items-center">
+        <Container
+            className={"flex flex-col items-center gap-10 lg:gap-12 lg:px-10"}
+        >
             <div
-                class="relative flex flex-col items-center text-center lg:py-7 xl:py-8
+                class="relative flex flex-col lg:py-7 xl:py-8
                     lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
             >
-                <div class="flex items-center gap-5">
+                <div class="flex gap-2 items-center">
+                    <img
+                        class="h-auto max-w-16 sm:max-w-20 rounded-full"
+                        src="/logos/logo.svg"
+                    />
                     <h1
-                        class="text-5xl/tight sm:text-6xl/tight md:text-7xl/tight xl:text-9xl/tight
+                        class="text-6xl/tight sm:text-6xl/tight md:text-7xl/tight xl:text-8xl/tight
                         font-bold text-heading-1"
                     >
                         BudBud
                     </h1>
                 </div>
-                <h1
-                    class="text-3xl/tight sm:text-4xl/tight md:text-6xl/tight xl:text-7xl/tight
-                         font-bold text-heading-2"
-                >
-                    Your new <span
-                        class="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-primary via-30% to-blue-600"
-                        >budget buddy</span
-                    > for personal finance
-                </h1>
-                <h1
-                    class="text-2xl/tight sm:text-3xl/tight md:text-4xl/tight xl:text-5xl/tight
-                         font-bold text-heading-2 mt-3"
-                >
-                    Soon<span class="dot1">.</span><span class="dot2">.</span
-                    ><span class="dot3">.</span>
-                </h1>
 
-                <div class="mt-10"></div>
+                <span
+                    class="type-welcome text-2xl/tight sm:text-3xl/tight md:text-4xl/tight xl:text-5xl/tight
+                font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 from-20% via-primary via-30% to-blue-500 py-5 mb-4"
+                ></span>
+
                 <AddEmailForm
                     client:load
                     authToken={authToken}
@@ -50,72 +44,4 @@ const listId = import.meta.env.BENCHMARKEMAIL_CONTACT_LIST_ID;
     </section>
 
     <ThemeButton className="fixed top-4 right-4" />
-
-    <style>
-        .dot1 {
-            animation: visibility 2s linear infinite;
-        }
-        @keyframes visibility {
-            0% {
-                opacity: 1;
-            }
-            65% {
-                opacity: 1;
-            }
-            66% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .dot2 {
-            animation: visibility2 2s linear infinite;
-        }
-        @keyframes visibility2 {
-            0% {
-                opacity: 0;
-            }
-            21% {
-                opacity: 0;
-            }
-            22% {
-                opacity: 1;
-            }
-            65% {
-                opacity: 1;
-            }
-            66% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .dot3 {
-            animation: visibility3 2s linear infinite;
-        }
-        @keyframes visibility3 {
-            0% {
-                opacity: 0;
-            }
-            43% {
-                opacity: 0;
-            }
-            44% {
-                opacity: 1;
-            }
-            65% {
-                opacity: 1;
-            }
-            66% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-    </style>
 </div>
