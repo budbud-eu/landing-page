@@ -2,7 +2,7 @@
 #
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
 #
-name: Deploy Astro site to Pages - production
+name: Deploy Astro site to Pages - Staging
 
 on:
   # Runs on pushes targeting the default branch
@@ -71,12 +71,12 @@ jobs:
           path: ${{ env.BUILD_PATH }}/dist
   deploy:
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: staging
+      url: ${{ steps.deployment.outputs.page_url }}/staging
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages - Staging
         id: deployment
         uses: actions/deploy-pages@v1
