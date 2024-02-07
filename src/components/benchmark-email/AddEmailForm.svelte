@@ -13,11 +13,6 @@
     const formData = new FormData(e.currentTarget as HTMLFormElement);
     const email = formData.get("email");
 
-    if (!email) {
-      responseStatus = -2;
-      return;
-    }
-
     isLoading = true;
 
     var myHeaders = new Headers();
@@ -56,8 +51,7 @@
   }
 </script>
 
-<form
-  class={`py-1 pl-6 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
+<form class={`py-1 pl-6 pr-1 flex gap-3 items-center text-heading-3 shadow-lg shadow-box-shadow
 border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body focus-within:border-primary ${
     toBounce ? "animate-bounce duration-800" : ""
   }`}
