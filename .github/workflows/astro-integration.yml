@@ -72,7 +72,7 @@ jobs:
   deploy:
     environment:
       name: integration
-      url: ${{ steps.deployment.outputs.page_url }}-int
+      url: budbud-eu-int.github.io
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
