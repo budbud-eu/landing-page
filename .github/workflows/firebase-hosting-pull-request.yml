@@ -15,3 +15,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_BUDBUD_EU_LANDING_PAGE }}'
           projectId: budbud-eu-landing-page
+          env:
+            FIREBASE_CLI_EXPERIMENTS: webframeworks
