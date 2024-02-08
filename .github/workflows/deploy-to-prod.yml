@@ -28,6 +28,26 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
+  release:
+    name: 'Release'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prompt for release tag name
+        id: prompt_tag_name
+        run: |
+          echo "::set-output name=tag_name::$(read -p 'Enter release tag name: ' tag && echo $tag)"
+      
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.prompt_tag_name.outputs.tag_name }}
+          release_name: Release ${{ steps.prompt_tag_name.outputs.tag_name }}
+          body: |
+            Changes in this release:
+            - Describe your changes here
   build:
     name: Build
     runs-on: ubuntu-latest
