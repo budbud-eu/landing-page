@@ -5,6 +5,7 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://budbud-eu.github.io/budbud-landing-page-development',
+  site: 'https://budbud-eu.github.io',
+  base: '/budbud-landing-page-development',
   integrations: [tailwind(), svelte()]
 });
