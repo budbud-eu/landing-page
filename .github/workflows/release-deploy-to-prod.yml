@@ -12,12 +12,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# Inputs
-inputs:
-  release_name_input:
-    description: "Release version"
-    required: true
+    # Inputs
+    inputs:
+      release_name_input:
+        description: "Release version"
+        required: true
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
