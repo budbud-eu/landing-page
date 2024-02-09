@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [tailwind(), svelte()],
   output: 'hybrid',
   adapter: node({
-    mode: "standalone"
+    mode: "middleware"
   }),
   redirects: {
     '/': '/soon'
