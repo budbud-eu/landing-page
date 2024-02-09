@@ -24,9 +24,8 @@ jobs:
           envkey_BENCHMARKEMAIL_AUTH_TOKEN: ${{ secrets.BENCHMARKEMAIL_AUTH_TOKEN }}
           envkey_BENCHMARKEMAIL_CONTACT_LIST_ID: ${{ secrets.BENCHMARKEMAIL_CONTACT_LIST_ID }}
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v1
-      
+      - run: npm ci && npm run build:staging
+            
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
