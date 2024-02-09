@@ -1,0 +1,20 @@
+---
+import Soon from "../components/sections/Soon.astro";
+import MaintenanceLayout from "../layouts/sub-layouts/MaintenanceLayout.astro";
+
+const maintenance = {
+    title: "Soon",
+    type: 1,
+};
+
+let Component!: any;
+switch (maintenance.type) {
+    case 1:
+        Component = Soon;
+        break;
+}
+---
+
+<MaintenanceLayout maintenanceTitle={maintenance.title}>
+    <Component />
+</MaintenanceLayout>
