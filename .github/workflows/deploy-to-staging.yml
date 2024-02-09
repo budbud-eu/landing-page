@@ -20,8 +20,6 @@ jobs:
       - name: Generate CNAME file and Astro Config File
         run: |
           echo "budbud-eu-landing-page--staging-uosd5uzi.web.app" > CNAME
-          mv astro.config.mjs astro.config.mjs.dev
-          mv astro.config.mjs.staging astro.config.mjs
 
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v2.0
@@ -30,7 +28,7 @@ jobs:
           envkey_BENCHMARKEMAIL_AUTH_TOKEN: ${{ secrets.BENCHMARKEMAIL_AUTH_TOKEN }}
           envkey_BENCHMARKEMAIL_CONTACT_LIST_ID: ${{ secrets.BENCHMARKEMAIL_CONTACT_LIST_ID }}
 
-      - run: npm ci && npm run build
+      - run: npm ci && npm run build:staging
             
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
