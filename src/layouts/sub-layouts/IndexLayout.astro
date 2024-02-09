@@ -9,7 +9,7 @@ export interface Props {
 
 const { title } = Astro.props;
 
-const targetPage = import.meta.env.DEV ? "/soon" : "";
+const targetPage = import.meta.env.PROD ? "/soon" : "";
 
 if (targetPage) {
     Astro.redirect(targetPage);
