@@ -38,8 +38,6 @@ jobs:
       - name: Generate CNAME file and Astro Config File
         run: |
           echo "budbud.eu" > CNAME
-          mv astro.config.mjs astro.config.mjs.dev
-          mv astro.config.mjs.prod astro.config.mjs
 
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v2.0
