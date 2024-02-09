@@ -38,8 +38,7 @@ jobs:
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v2.0
         with:
-          envkey_DEBUG: false
-          envkey_MAINTENANCE_PAGE: ${{ vars.MAINTENANCE_PAGE }}
+          envkey_ENV: 'production'
           envkey_BENCHMARKEMAIL_AUTH_TOKEN: ${{ secrets.BENCHMARKEMAIL_AUTH_TOKEN }}
           envkey_BENCHMARKEMAIL_CONTACT_LIST_ID: ${{ secrets.BENCHMARKEMAIL_CONTACT_LIST_ID }}
       

@@ -38,8 +38,8 @@ const services = [
 ];
 
 const maintenancePages = [
-    'SOON',
-    'MAINTENANCE'
+    'soon',
+    'maintenance'
 ]
 
 export { services, maintenancePages };
