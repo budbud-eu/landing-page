@@ -9,7 +9,5 @@ export default defineConfig({
   site: 'https://budbud.eu',
   integrations: [tailwind(), svelte()],
   output: 'hybrid',
-  adapter: node({
-    mode: "middleware"
-  })
+  adapter: node()
 });
