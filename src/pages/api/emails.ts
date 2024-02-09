@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro'
 const authToken = import.meta.env.BENCHMARKEMAIL_AUTH_TOKEN
 const listId = import.meta.env.BENCHMARKEMAIL_CONTACT_LIST_ID
 
-export const prerender = true;
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
     const formData = await request.formData()
