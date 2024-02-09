@@ -6,7 +6,6 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "build:staging": "astro build --config astro-staging-config.js",
     "preview": "astro preview",
     "astro": "astro"
   },
