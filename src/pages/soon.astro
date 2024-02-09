@@ -3,9 +3,6 @@ import Container from "../components/shared/Container.astro";
 import ThemeButton from "../components/shared/ThemeButton.astro";
 import MaintenanceLayout from "../layouts/sub-layouts/MaintenanceLayout.astro";
 import AddEmailForm from "../components/benchmark-email/AddEmailForm.svelte";
-
-const authToken = import.meta.env.BENCHMARKEMAIL_AUTH_TOKEN;
-const listId = import.meta.env.BENCHMARKEMAIL_CONTACT_LIST_ID;
 ---
 
 <MaintenanceLayout maintenanceTitle="Soon...">
@@ -37,12 +34,7 @@ const listId = import.meta.env.BENCHMARKEMAIL_CONTACT_LIST_ID;
                         font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 from-20% via-primary via-30% to-blue-500 mt-2"
                     ></span>
 
-                    <AddEmailForm
-                        className={"mt-7"}
-                        client:load
-                        authToken={authToken}
-                        listId={listId}
-                    />
+                    <AddEmailForm className={"mt-7"} client:load />
                 </div>
             </Container>
         </section>
