@@ -16,7 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci && npm run build
+
+      - name: Create .env file
+        uses: SpicyPizza/create-envfile@v2.0
+        with:
+          envkey_ENV: 'staging'
+          envkey_BENCHMARKEMAIL_AUTH_TOKEN: ${{ secrets.BENCHMARKEMAIL_AUTH_TOKEN }}
+          envkey_BENCHMARKEMAIL_CONTACT_LIST_ID: ${{ secrets.BENCHMARKEMAIL_CONTACT_LIST_ID }}
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v1
+      
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'

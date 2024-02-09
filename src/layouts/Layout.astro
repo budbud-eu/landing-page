@@ -1,19 +1,9 @@
 ---
-import Footer from "../components/elements/Footer.astro";
-import Navbar from "../components/elements/Navbar.astro";
-import Soon from "../components/sections/Soon.astro";
-import { maintenancePages } from "../utils/data";
-
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-let maintancePage = "";
-if (import.meta.env.MAINTENANCE_PAGE) {
-  maintancePage = maintenancePages[import.meta.env.MAINTENANCE_PAGE];
-}
 ---
 
 <!doctype html>
@@ -32,17 +22,7 @@ if (import.meta.env.MAINTENANCE_PAGE) {
     />
   </head>
   <body class="bg-body">
-    {
-      maintancePage === "SOON" ? (
-        <Soon />
-      ) : (
-        <div class="min-h-screen flex flex-col overflow-hidden overflow-y-auto">
-          <Navbar />
-          <slot />
-          <Footer />
-        </div>
-      )
-    }
+    <slot />
   </body>
   <script>
     const switchTheme = document.querySelector(
