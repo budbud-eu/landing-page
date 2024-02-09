@@ -2,12 +2,12 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
-import node from "@astrojs/node";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://budbud.eu',
   integrations: [tailwind(), svelte()],
-  output: 'hybrid',
-  adapter: node()
+  output: "hybrid",
+  adapter: vercel()
 });
