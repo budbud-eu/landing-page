@@ -35,6 +35,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Generate CNAME file
+        run: |
+          echo "budbud.eu" > CNAME
+
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v2.0
         with:
