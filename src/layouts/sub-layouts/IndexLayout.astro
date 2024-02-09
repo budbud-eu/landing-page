@@ -8,15 +8,7 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-
-const redirect = "/maintenance";
 ---
-
-<!-- redirects -->{
-    redirect ? (
-        <meta http-equiv="redirect" content={`${"0"}; url=${"/maintenance"}`} />
-    ) : null
-}
 
 <Layout title={title}>
     <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
