@@ -3,10 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --config astro-dev.config.mjs",
+    "dev": "astro dev",
     "start": "astro dev",
-    "build:staging": "astro build --config astro-staging.config.mjs",
-    "build:prod": "astro build --config astro-prod.config.mjs",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

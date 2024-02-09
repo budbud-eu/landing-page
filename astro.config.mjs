@@ -6,7 +6,7 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://budbud-eu-landing-page--staging-uosd5uzi.web.app',
+  site: 'https://budbud.eu',
   integrations: [tailwind(), svelte()],
   output: 'hybrid',
   adapter: node({
