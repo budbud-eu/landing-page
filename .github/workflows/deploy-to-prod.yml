@@ -35,7 +35,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate CNAME file
+      - name: Generate CNAME file and Astro Config File
         run: |
           echo "budbud.eu" > CNAME
           mv astro.config.mjs astro.config.mjs.dev
