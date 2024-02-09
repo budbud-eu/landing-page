@@ -1,44 +1,26 @@
 <script lang="ts">
   import Button from "../shared/Button.svelte";
 
-  export let authToken!: string;
-  export let listId!: number;
   export let className!: string;
 
   let isLoading: boolean = false;
-  let responseStatus: number;
+  let statusCode: number;
 
   async function submit(e: SubmitEvent) {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget as HTMLFormElement);
-    const email = formData.get("email");
 
     isLoading = true;
 
-    var myHeaders = new Headers();
-    myHeaders.append("AuthToken", authToken);
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-      EmailIDs: formData.get("email"),
+    const response = await fetch("/api/emails", {
+      method: "POST",
+      body: formData,
     });
 
-    const response = await fetch(
-      "https://clientapi.benchmarkemail.com/Contact/" +
-        listId +
-        "/ContactDetails/CSV/Verified",
-      {
-        method: "POST",
-        body: raw,
-        headers: myHeaders,
-      },
-    );
-    const data = await response.json();
+    statusCode = await response.status;
 
-    responseStatus = data.Response.Status;
-
-    if (responseStatus) {
+    if (statusCode) {
       isLoading = false;
     }
   }
@@ -76,6 +58,7 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
       ></path>
     </svg>
   </span>
+
   <input
     type="email"
     name="email"
@@ -85,6 +68,9 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
     on:blur={toggleBounce}
     required
   />
+
+  <input type="hidden" name="error" value="0" />
+
   <Button variant={"primary"} className={"min-w-max text-white"}>
     <span class="hidden sm:flex relative z-[5]"> Wow! Notify me!</span>
     <span class="flex sm:hidden relative z-[5]">
@@ -107,7 +93,7 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
 </form>
 
 <div class="flex justify-center mt-2" role="status">
-  {#if !responseStatus && isLoading}
+  {#if isLoading}
     <svg
       aria-hidden="true"
       class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
@@ -124,11 +110,11 @@ border border-box-border bg-box-bg rounded-full ease-linear focus-within:bg-body
         fill="currentFill"
       />
     </svg>
-  {:else if responseStatus == 1}
+  {:else if statusCode && statusCode == 200}
     <p class="text-green-500 font-bold sm:font-sm">
       Thanks! We will keep you updated ;&#41;
     </p>
-  {:else if responseStatus == -1}
+  {:else if statusCode && statusCode != 200}
     <p class="text-red-500 font-bold">
       An error ocurred while saving your email...
     </p>
