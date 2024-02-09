@@ -8,9 +8,6 @@ export default defineConfig({
   site: 'https://budbud.eu',
   integrations: [tailwind(), svelte()],
   redirects: {
-    '/': {
-      status: 302,
-      destination: '/maintenance',
-    },
+    '/': '/soon'
   }
 });
