@@ -37,9 +37,4 @@ const services = [
     },
 ];
 
-const maintenancePages = [
-    'soon',
-    'maintenance'
-]
-
-export { services, maintenancePages };
+export { services };
