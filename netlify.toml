@@ -1,9 +1,4 @@
 [[redirects]]
   from = "/*"
-  to = "/soon"
-  status = 200
-
-[[redirects]]
-  from = "/"
-  to = "/soon"
-  status = 200
+  to = "/index.html"
+  status = 302
