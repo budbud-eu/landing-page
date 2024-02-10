@@ -4,10 +4,11 @@
       "main": false
     }
   },
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/:path*",
-      "destination": "/soon"
+      "source": "/*",
+      "destination": "/soon",
+      "permanent": false
     }
   ]
 }
