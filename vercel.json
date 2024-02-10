@@ -4,11 +4,13 @@
       "main": false
     }
   },
-  "rewrites": {
-    "source": "/:path*",
-    "destination": "/soon",
-    "conditions": [
-      "!next/preview"
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/soon",
+      "conditions": [
+        "!next/preview"
+      ]
+    }
+  ]
 }
