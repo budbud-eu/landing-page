@@ -7,7 +7,7 @@
     "redirects": [
         {
             "source": "/(.*)",
-            "destination": "/index.html",
+            "destination": "/",
             "statusCode": 302
         }
     ]
