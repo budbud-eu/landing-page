@@ -3,11 +3,5 @@
     "deploymentEnabled": {
       "main": false
     }
-  },
-  "redirects": [
-    {
-      "source": "/:path((?!soon).*)",
-      "destination": "/soon"
-    }
-  ]
+  }
 }
