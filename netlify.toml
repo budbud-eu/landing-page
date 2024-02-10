@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "/soon"
+  status = 200
