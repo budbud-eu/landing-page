@@ -6,8 +6,8 @@
   },
   "rewrites": [
     {
-      "source": "/((?!soon).*)",
-      "destination": "/soon"
+      "source": "/(.*)",
+      "destination": "/soon.html"
     }
   ]
 }
