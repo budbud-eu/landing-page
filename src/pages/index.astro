@@ -6,14 +6,9 @@ import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Brands from "../components/sections/Brands.astro";
 import IndexLayout from "../layouts/sub-layouts/IndexLayout.astro";
-
-if (import.meta.env.ENV !== "development") {
-	Astro.redirect("/soon");
-}
 ---
 
 <IndexLayout title="Your budget buddy">
-	<p>{Astro.site}</p>
 	<Hero />
 	<Brands />
 	<Services />
