@@ -3,14 +3,5 @@
     "deploymentEnabled": {
       "main": false
     }
-  },
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "destination": "/soon",
-      "conditions": [
-        "!next/preview"
-      ]
-    }
-  ]
+  }
 }
