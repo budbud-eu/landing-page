@@ -6,6 +6,12 @@ import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Brands from "../components/sections/Brands.astro";
 import IndexLayout from "../layouts/sub-layouts/IndexLayout.astro";
+
+const targetPage = import.meta.env.PROD ? "/soon" : null; // Adjust URL
+
+if (targetPage) {
+	return Astro.redirect(targetPage);
+}
 ---
 
 <IndexLayout title="Your budget buddy">
