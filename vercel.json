@@ -3,12 +3,5 @@
         "deploymentEnabled": {
             "main": false
         }
-    },
-    "redirects": [
-        {
-            "source": "/(.*)",
-            "destination": "/",
-            "statusCode": 302
-        }
-    ]
+    }
 }
