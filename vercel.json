@@ -4,11 +4,10 @@
             "main": false
         }
     },
-    "redirects": [
+    "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/",
-            "permanent": false
+            "destination": "/"
         }
     ]
 }
