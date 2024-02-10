@@ -26,7 +26,7 @@ jobs:
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --local-config=vercel.production.json --token=${{ secrets.VERCEL_TOKEN }}
+        run: vercel --yes --prebuilt --prod --local-config=vercel.production.json --token=${{ secrets.VERCEL_TOKEN }}
 
       # - name: Deploying on Vercel
       #   run: vercel --yes --local-config=vercel.production.json --prod --debug --token=${{ secrets.VERCEL_TOKEN }}
