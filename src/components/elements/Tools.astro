@@ -26,48 +26,15 @@ let { inMaintenance } = Astro.props;
     </label>
 </div>
 
-<script>
-    import { async_put } from "../../libs/utils";
-
-    document.getElementById("toggleMaintenance")!.checked =
-        getMaintenanceMode();
-
-    let session_id = sessionStorage.getItem("session_id")!;
-
-    if (!session_id) {
-        session_id = document.getElementById("session_id")!.value;
-        console.log(session_id);
-
-        sessionStorage.setItem("session_id", session_id);
-    }
-
-    function getMaintenanceMode() {
-        const maintenance = parseInt(sessionStorage.getItem("maintenance"));
-
-        if (maintenance) {
-            return maintenance;
-        } else {
-            return 0;
-        }
-    }
-
-    function setMaintenanceMode(maintenance: any) {
-        console.log(maintenance);
-
-        sessionStorage.setItem("maintenance", maintenance);
-        async_put("api/maintenance", {
-            session_id: session_id,
-            maintenance: maintenance,
-        }).then((resp) => {
-            console.log(`new maintenance put value = ${maintenance}`);
-        });
-    }
+<script type="text/javascript" define:vars={{ inMaintenance }}>
+    document.getElementById("toggleMaintenance").checked = inMaintenance;
 
     document
         .getElementById("toggleMaintenance")
-        ?.addEventListener("click", () => {
-            const actualMaintenance = getMaintenanceMode();
+        .addEventListener("click", (event) => {
+            var cookieString = "maintenance=" + +!inMaintenance;
+            document.cookie = cookieString;
 
-            setMaintenanceMode(+!actualMaintenance);
+            window.location.reload();
         });
 </script>
