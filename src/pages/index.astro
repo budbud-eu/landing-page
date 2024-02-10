@@ -11,11 +11,12 @@ if (
 	import.meta.env.ENV !== "staging" &&
 	import.meta.env.ENV !== "development"
 ) {
-	return Astro.redirect("/soon");
+	Astro.redirect("/soon");
 }
 ---
 
 <IndexLayout title="Your budget buddy">
+	<p>{Astro.site}</p>
 	<Hero />
 	<Brands />
 	<Services />
