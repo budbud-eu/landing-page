@@ -7,10 +7,11 @@ import CTA from "../components/sections/CTA.astro";
 import Brands from "../components/sections/Brands.astro";
 import IndexLayout from "../layouts/sub-layouts/IndexLayout.astro";
 
-const targetPage = import.meta.env.PROD ? "/soon" : null; // Adjust URL
-
-if (targetPage) {
-	return Astro.redirect(targetPage);
+if (
+	import.meta.env.ENV !== "staging" &&
+	import.meta.env.ENV !== "development"
+) {
+	return Astro.redirect("/soon");
 }
 ---
 
