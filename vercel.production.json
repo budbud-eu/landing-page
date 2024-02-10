@@ -6,7 +6,7 @@
   },
   "rewrites": [
     {
-      "source": "/:path((?!soon).*)",
+      "source": "/(.*)",
       "destination": "/soon"
     }
   ]
