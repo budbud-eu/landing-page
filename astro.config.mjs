@@ -8,8 +8,5 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), svelte()],
   output: "hybrid",
-  adapter: netlify(),
-  redirects: {
-    '/': '/soon'
-  }
+  adapter: netlify()
 });
