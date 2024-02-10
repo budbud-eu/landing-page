@@ -5,14 +5,29 @@ import AboutUs from "../components/sections/AboutUs.astro";
 import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Brands from "../components/sections/Brands.astro";
-import IndexLayout from "../layouts/sub-layouts/IndexLayout.astro";
+import Default from "../layouts/Default.astro";
+
+import { suid } from "../libs/utils";
+import { getMaintenanceMode, setMaintenanceMode } from "./sessions";
+
+let session_id = suid();
+let inMaintenance = getMaintenanceMode(session_id);
+
+if (!inMaintenance) {
+	inMaintenance = 0;
+	setMaintenanceMode(session_id, inMaintenance);
+}
 ---
 
-<IndexLayout title="Your budget buddy">
+<Default
+	title="Your budget buddy"
+	inMaintenance={inMaintenance === 1}
+	sessionId={session_id}
+>
 	<Hero />
 	<Brands />
 	<Services />
 	<AboutUs />
 	<Features />
 	<CTA />
-</IndexLayout>
+</Default>
