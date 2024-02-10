@@ -6,13 +6,30 @@ import Features from "../components/sections/Features.astro";
 import CTA from "../components/sections/CTA.astro";
 import Brands from "../components/sections/Brands.astro";
 import IndexLayout from "../layouts/sub-layouts/IndexLayout.astro";
+import MaintenanceLayout from "../layouts/sub-layouts/MaintenanceLayout.astro";
+import Soon from "../components/sections/Soon.astro";
+
+console.log(Astro.cookies.get("staging")?.number());
+
+const isInMaintenance =
+	import.meta.env.MAINTENANCE === "1" &&
+	(import.meta.env.ENV === "production" ||
+		Astro.cookies.get("maintenance")?.number() === 1);
 ---
 
-<IndexLayout title="Your budget buddy">
-	<Hero />
-	<Brands />
-	<Services />
-	<AboutUs />
-	<Features />
-	<CTA />
-</IndexLayout>
+{
+	isInMaintenance ? (
+		<MaintenanceLayout maintenanceTitle="Soon...">
+			<Soon />
+		</MaintenanceLayout>
+	) : (
+		<IndexLayout title="Your budget buddy">
+			<Hero />
+			<Brands />
+			<Services />
+			<AboutUs />
+			<Features />
+			<CTA />
+		</IndexLayout>
+	)
+}

@@ -1,0 +1,46 @@
+---
+import Container from "../shared/Container.astro";
+import ThemeButton from "../shared/ThemeButton.astro";
+import AddEmailForm from "../benchmark-email/AddEmailForm.svelte";
+---
+
+<div class="min-h-screen flex flex-col overflow-y-hidden">
+    <section class="flex flex-1 items-center">
+        <Container className={"flex flex-col items-center gap-10 lg:gap-12"}>
+            <div
+                class="flex flex-col lg:py-7 xl:py-8
+                    lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+            >
+                <div class="flex items-center gap-2">
+                    <img
+                        alt="logo"
+                        class="h-auto max-w-16 lg:max-w-24 rounded-full"
+                        src="/logos/logo.svg"
+                    />
+                    <h1
+                        class="text-5xl/tight sm:text-6xl/tight md:text-7xl/tight xl:text-8xl/tight
+                        font-bold text-heading-1"
+                    >
+                        BudBud
+                    </h1>
+                </div>
+
+                <span
+                    class="type-welcome text-2xl/tight sm:text-3xl/tight md:text-4xl/tight xl:text-5xl/tight
+                    font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 from-20% via-primary via-30% to-blue-500 mt-2"
+                ></span>
+
+                <AddEmailForm className={"mt-7"} client:load />
+            </div>
+        </Container>
+    </section>
+
+    <ThemeButton className="fixed top-4 right-4" />
+
+    <div
+        class="flex flex-col items-center mt-auto text-heading-1 font-bold gap-y-1"
+    >
+        <p class="text-sm/tight">Powered by AI</p>
+        <p class="text-xs/tight">Subscribe for more news and early access</p>
+    </div>
+</div>
