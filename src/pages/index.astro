@@ -15,7 +15,6 @@ const isInMaintenance =
 	Astro.cookies.get("maintenance")?.number() === 1;
 ---
 
-<p>{Astro.cookies.get("maintenance")?.number()}</p>
 {
 	isInMaintenance ? (
 		<MaintenanceLayout maintenanceTitle="Soon...">
@@ -23,6 +22,8 @@ const isInMaintenance =
 		</MaintenanceLayout>
 	) : (
 		<IndexLayout title="Your budget buddy">
+			<p>{Astro.cookies.get("maintenance")?.number()}</p>
+
 			<Hero />
 			<Brands />
 			<Services />
