@@ -1,0 +1,15 @@
+---
+import Layout from "../Layout.astro";
+
+export interface Props {
+    maintenanceTitle: string;
+}
+
+const { maintenanceTitle } = Astro.props;
+---
+
+<Layout title={maintenanceTitle}>
+    <main class="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+        <slot />
+    </main>
+</Layout>
