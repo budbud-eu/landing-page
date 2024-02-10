@@ -10,6 +10,6 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel(),
   redirects: {
-    '/:path((?!soon).*)': '/soon'
+    '/': '/soon'
   }
 });
