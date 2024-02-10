@@ -6,7 +6,7 @@
   },
   "redirects": [
     {
-      "source": "/*",
+      "source": "/:path*",
       "destination": "/soon",
       "permanent": false
     }
