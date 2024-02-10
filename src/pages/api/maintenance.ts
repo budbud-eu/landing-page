@@ -1,7 +1,5 @@
 import { setMaintenanceMode } from "../sessions"
 
-export const prerender = false;
-
 export async function PUT({ request }) {
     const content = await request.json()
 
