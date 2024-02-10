@@ -9,12 +9,13 @@ import IndexLayout from "../layouts/sub-layouts/IndexLayout.astro";
 
 const targetPage = import.meta.env.PROD ? "/soon" : null; // Adjust URL
 
-if (targetPage) {
-	return Astro.redirect(targetPage);
-}
+// if (targetPage) {
+// 	return Astro.redirect(targetPage);
+// }
 ---
 
 <IndexLayout title="Your budget buddy">
+	<p>{import.meta.env.MODE}</p>
 	<Hero />
 	<Brands />
 	<Services />
