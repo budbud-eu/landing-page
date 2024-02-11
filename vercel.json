@@ -5,12 +5,6 @@
         }
     },
     "cleanUrls": false,
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ],
     "routes": [
         {
             "handle": "filesystem"
