@@ -12,10 +12,9 @@ import AddEmailForm from "../components/benchmark-email/AddEmailForm.svelte";
                 className={"flex flex-col items-center gap-10 lg:gap-12"}
             >
                 <div
-                    class="flex flex-col lg:py-7 xl:py-8
-                    lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
+                    class="flex flex-col items-center lg:py-7 xl:py-8 lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2"
                 >
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center justify-center gap-2 me-6">
                         <img
                             alt="logo"
                             class="h-auto max-w-16 lg:max-w-24 rounded-full"
@@ -34,7 +33,7 @@ import AddEmailForm from "../components/benchmark-email/AddEmailForm.svelte";
                     font-bold text-transparent bg-clip-text bg-gradient-to-br from-blue-500 from-20% via-primary via-30% to-blue-500 mt-2"
                     ></span>
 
-                    <AddEmailForm className={"mt-7"} client:load />
+                    <AddEmailForm className={"mt-10"} client:load />
                 </div>
             </Container>
         </section>
