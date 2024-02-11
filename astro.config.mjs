@@ -12,8 +12,5 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     }
-  }),
-  redirects: {
-    '/(.*)': '/'
-  }
+  })
 });

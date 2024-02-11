@@ -3,5 +3,25 @@
         "deploymentEnabled": {
             "main": false
         }
-    }
+    },
+    "cleanUrls": false,
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
+    "routes": [
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "status": 404,
+            "methods": [
+                "GET"
+            ],
+            "dest": "/"
+        }
+    ]
 }
