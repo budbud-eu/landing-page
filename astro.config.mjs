@@ -9,6 +9,11 @@ export default defineConfig({
   integrations: [tailwind(), svelte()],
   output: "hybrid",
   adapter: vercel({
-    edgeMiddleware: true
-  })
+    webAnalytics: {
+      enabled: true,
+    }
+  }),
+  redirects: {
+    '/(.*)': '/'
+  }
 });
