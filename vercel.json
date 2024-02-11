@@ -4,7 +4,6 @@
             "main": false
         }
     },
-    "cleanUrls": false,
     "routes": [
         {
             "handle": "filesystem"
